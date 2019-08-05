@@ -1,0 +1,15 @@
+
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">L'Auteur de ce magnifique Gossip!</h1>
+    <h2><%= User.find(@id).first_name%> <%= User.find(@id).last_name%> <%= params[:index]%></h2>
+    <h3>Age: <%= User.find(@id).age%></h3>
+    <h3>Qui nous vient de: <%= User.find(@id).city%></h3>
+    <h3>Sa description: <%= User.find(@id).description%></h3>
+    <h3>Pour la contacter: <%= User.find(@id).email%></h3>
+  </div>
+</div>
+
+    
+
+

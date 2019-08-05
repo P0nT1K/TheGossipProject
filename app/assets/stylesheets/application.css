@@ -13,3 +13,26 @@
  *= require_tree .
  *= require_self
  */
+
+
+
+ h1,h2,h3,h4,h5{
+     margin: 0;
+    text-align: center;
+}
+p{
+    margin-left: 20px;
+    margin-right: 20px;
+    flex-wrap: wrap;
+}
+form{
+    margin-left: 20px;
+    margin-right: 20px;
+    flex-wrap: wrap;
+} 
+
+.card{
+    margin-left: 10px;
+    margin-right: 10px;
+    align-self: auto;
+}

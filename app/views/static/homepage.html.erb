@@ -1,11 +1,18 @@
-<h1>TheGossipProject</h1>
- <% @gossips.each_with_index do |gossip,index| %>
-      <p>
-       <%= gossip.user.first_name%><br/>      
-       <%= gossip.content%><br/>
-       <a href= "http://localhost:3000/gossip/<% (index+1)%>">lien</a>
-      </p>
-    <%end%>
+<h1>Liste de tous les Gossips</h1>
+<div class="container d-flex flex-wrap">
+ <% @gossips.each do |gossip| %>
+ <div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title"><%= gossip.user.first_name%></h5>
+    <h6 class="card-subtitle mb-2 text-muted"><%= gossip.title%></h6>
+    <p class="card-text"><%= gossip.content%></p>
+    <a href="gossip/<%= gossip.id%>" class="card-link">Edition</a>
+    <a href="user/<%= gossip.user.id%>" class="card-link">Auteur</a>
+  </div>
+</div>
+
+<%end%></div>
+
 
 
 

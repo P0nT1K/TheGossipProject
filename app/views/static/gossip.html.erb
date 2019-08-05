@@ -1,8 +1,11 @@
-<h1>Les Gossips</h1>
+<h1>Selection de Gossip</h1>
+<div class="jumbotron">
+  <h1 class="display-4">Voici le gossip n° <%= params[:index]%></h1>
+  <p class="lead">Son auteur : <%= @gossips.user.first_name %></p>
+  <hr class="my-4">
+  <p>Le contenu du potin : <%= @gossips.content %></p>
+  <a class="btn btn-primary btn-lg" href="user/<%= @gossips.user.id%>" role="button">Profil de l'auteur</a>
+</div>
+    
 
-  <% @gossips.each do |gossip| %> 
-    <p> Voici le gossip n° <%= @index%><br/>
-    Son auteur : <%= gossip.user_id %><br/>
-    Le contenu du potin : <%= gossip.content %>
-    </p>
-    <% end %>
+
