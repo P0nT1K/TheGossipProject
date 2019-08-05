@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  get 'user/:id', to: 'static#user'
+  get 'identify', to: 'static#identify'
+  get '/gossip/user/:id', to: 'static#user'
   resources :user, controller: "user"
   get 'gossip/:index', to: 'static#gossip'
   resources :gossip , controller: "gossip"
