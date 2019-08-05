@@ -1,0 +1,8 @@
+<h1>Les Gossips</h1>
+
+  <% @gossips.each do |gossip| %> 
+    <p> Voici le gossip n° <%= @index%><br/>
+    Son auteur : <%= gossip.user_id %><br/>
+    Le contenu du potin : <%= gossip.content %>
+    </p>
+    <% end %>

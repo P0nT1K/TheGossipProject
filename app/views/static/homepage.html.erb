@@ -1,5 +1,14 @@
 <h1>TheGossipProject</h1>
-<p><%= gossips[0].user_id.first_name %><br/>
-   <%= gossips[0].content %>
-</p>
+ <% @gossips.each_with_index do |gossip,index| %>
+      <p>
+       <%= gossip.user.first_name%><br/>      
+       <%= gossip.content%><br/>
+       <a href= "http://localhost:3000/gossip/<% (index+1)%>">lien</a>
+      </p>
+    <%end%>
+
+
+
+
+
      

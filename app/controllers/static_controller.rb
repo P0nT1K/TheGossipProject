@@ -3,12 +3,12 @@ class StaticController < ApplicationController
   end
   def contact
   end
-  
+  def gossip
+    @gossips = Gossip.all
+    @index = params[:index]
+  end
+
   def homepage
-    gossips = Gossip.all
-    gossips.each do |gossip|
-      return gossip.content
-      return gossip.user_id.first_name
-    end
+    @gossips = Gossip.all
   end
 end
