@@ -7,7 +7,7 @@
     <h6 class="card-subtitle mb-2 text-muted"><%= gossip.title%></h6>
     <p class="card-text"><%= gossip.content%></p>
     <a href="gossip/<%= gossip.id%>" class="card-link">Edition</a>
-    <a href="user/<%= gossip.user.id%>" class="card-link">Auteur</a>
+    <a href="/gossip/user/<%= gossip.user.id%>" class="card-link">Auteur</a>
   </div>
 </div>
 
