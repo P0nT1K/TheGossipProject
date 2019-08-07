@@ -1,0 +1,13 @@
+
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">L'Auteur de ce magnifique Gossip!</h1>
+    <h2><%= @user.first_name%> <%= @user.last_name%></h2>
+    <h3>Age: <%= @user.age%></h3>
+    <h3>Qui nous vient de: <%= link_to "#{@user.city.name}", city_path(@user.city.id)%></a></h3>
+    <h3>Sa description: <%= @user.description%></h3>
+    <h3>Contact: <%= @user.email%></h3>
+  </div>
+</div>
+
+

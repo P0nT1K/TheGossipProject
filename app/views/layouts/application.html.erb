@@ -7,7 +7,9 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <link href="assets/bootsrap/css/bootstap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    
   </head>
   <header>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -19,16 +21,19 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="http://localhost:3000/">Home <span class="sr-only">(current)</span></a>
+        <%= link_to "Home", gossips_path, :class=>"nav-link"  %>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="http://localhost:3000/team">Team</a>
+         <%= link_to "Create", new_gossip_path, :class=>"nav-link"  %>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="http://localhost:3000/contact">Contacts</a>
+        <%= link_to "Team", team_path, :class=>"nav-link"  %>
+      </li>
+      <li class="nav-item">
+         <%= link_to "Contact", contact_path, :class=>"nav-link"  %>
       </li>
     </ul>
-    
+     
   </div>
 </nav>
   </header>

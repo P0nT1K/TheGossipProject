@@ -6,16 +6,13 @@
     <h5 class="card-title"><%= gossip.user.first_name%></h5>
     <h6 class="card-subtitle mb-2 text-muted"><%= gossip.title%></h6>
     <p class="card-text"><%= gossip.content%></p>
-    <a href="gossip/<%= gossip.id%>" class="card-link">Edition</a>
-    <a href="/gossip/user/<%= gossip.user.id%>" class="card-link">Auteur</a>
+    <a href="<%= gossip_path(gossip.id)%>" class="card-link">Consulter</a>
+    <a href="<%= edit_gossip_path(gossip.id)%>" class="card-link">Editer</a>
+    <a href="<%= user_path(gossip.user.id)%>" class="card-link">Auteur</a>
+    <a href="<%= gossip_path(gossip.id)%>" class="btn btn-danger" data-confirm= "êtes vous sûr?" data-method="DELETE" >Supprimer</a>
+  
   </div>
 </div>
 
 <%end%></div>
 
-
-
-
-
-
-     

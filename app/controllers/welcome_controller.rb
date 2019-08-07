@@ -1,5 +1,5 @@
 class WelcomeController < ApplicationController
     def welcome
-        @first_name = params[:first_name]
+        @first_name =  document.getElementById("myText").value
     end
 end

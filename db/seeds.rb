@@ -1,12 +1,6 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
 require 'pry'
 require 'faker'
+Faker::Config.locale ='fr'
 City.destroy_all
 User.destroy_all
 Gossip.destroy_all
@@ -17,27 +11,27 @@ JointureMessage.destroy_all
 Comment.destroy_all
 
 10.times do
-  City.create(name: Faker::Address.city, zip_code: Faker::Address.zip_code)
+  City.create!(name: Faker::Address.city, zip_code: Faker::Address.zip_code)
 end
 
 10.times do
-  User.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, description: Faker::Quote.matz, email: Faker::Internet.email, age: rand(15..40), city: City.all.sample)
+  User.create!(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, description: Faker::Quote.matz, email: Faker::Internet.email, age: rand(15..40), city: City.all.sample)
 end
 
 20.times do
-  Gossip.create(title: Faker::Quote.singular_siegler, content: Faker::Quote.matz, user: User.all.sample)
+  Gossip.create!(title: Faker::Lorem.characters(number: 10), content: Faker::Lorem.sentence(word_count: 10), user: User.all.sample)
 end
 
 10.times do
-  Tag.create(title: Faker::TvShows::SouthPark.character)
+  Tag.create!(title: Faker::TvShows::SouthPark.character)
 end
 
 Gossip.all.each do |gossip|
-  JointureGossip.create(gossip: gossip, tag: Tag.all.sample)
+  JointureGossip.create!(gossip: gossip, tag: Tag.all.sample)
 end
 
 80.times do
-  JointureGossip.create(gossip: Gossip.all.sample, tag: Tag.all.sample)
+  JointureGossip.create!(gossip: Gossip.all.sample, tag: Tag.all.sample)
 end
 
 20.times do # Permet d'envoyer un message depuis un sender à 1 ou plusieurs recipients, en évitant de s'envoyer le message à soi-même et d'envoyer le message plusieurs fois au même recipient
@@ -49,12 +43,12 @@ end
   nb_recipients.times do
     recipient = senders.sample # On récupère un recipient depuis l'array 
     senders.delete(recipient) # On le remove de l'array
-    JointureMessage.create(private_message: PrivateMessage.create(sender: sender, content: content), recipient: recipient)
+    JointureMessage.create!(private_message: PrivateMessage.create!(sender: sender, content: content), recipient: recipient)
   end
 end
 
 20.times do
-  Comment.create(user: User.all.sample, commentable: Gossip.all.sample, content: Faker::Quote.matz)
+  Comment.create!(user: User.all.sample, commentable: Gossip.all.sample, content: Faker::Quote.matz)
 end
 
 40.times do # Au hasard on like soit un gossip soit un comment
@@ -63,7 +57,7 @@ end
     else
       thing = Comment.all.sample
     end
-  Like.create(user: User.all.sample, likeable: thing)
+  Like.create!(user: User.all.sample, likeable: thing)
 end
 
 20.times do # Au hasard on comment soit un gossip soit un comment
@@ -72,5 +66,6 @@ end
     else
       thing = Comment.all.sample
     end
-    Comment.create(user: User.all.sample, commentable: thing, content: Faker::Quote.matz)
+    Comment.create!(user: User.all.sample, commentable: thing, content: Faker::Quote.matz)
 end
+puts "DB completee"

@@ -1,0 +1,18 @@
+
+  <h1 class="display-4">On gossip à <%= @city.name%></h1>
+    <% @city.users.each do |user| %>
+      <div class="card" style="width: 18rem;">
+        <div class="card-body">
+        <h5 class="card-title"><%= user.first_name%> <%= user.last_name%></h5>
+      </div>
+      </div>
+        <%user.gossips.each do |gossip|%>
+            <div class="card" style="width: 18rem;">
+             <div class="card-body">
+             <h5 class="card-title"><%= gossip.title%> </h5>
+             <h5 class="card-title"><%= gossip.content%> </h5>
+              </div>
+            </div>
+        <% end %>
+ 
+    <%end%>

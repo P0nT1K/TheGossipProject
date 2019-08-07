@@ -1,0 +1,15 @@
+<h1>Création d'un Gossip</h1>
+
+
+<%= form_tag(gossips_path, method: "post") do %>
+    <%= label_tag( "Prénom") %>
+    <%= text_field_tag(:first_name) %>
+    <%= label_tag( "Nom") %>
+    <%= text_field_tag(:last_name) %>
+    <%= label_tag( "Title") %>
+    <%= text_field_tag(:title) %>
+    <%= text_area_tag(:content, "Tape ton gossip ici", size: "24x6") %>
+    
+    <%= submit_tag("Validates") %>
+<% end %>
+
