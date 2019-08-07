@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :gossips
   resources :users 
   resources :cities
+  resources :comments 
   root 'gossips#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
