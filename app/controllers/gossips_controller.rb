@@ -1,6 +1,9 @@
 class GossipsController < ApplicationController
-    #id = session[:user_id]
-    #@user = User.find(id) #et hop, cette variable @user est l'instance User contenant toutes les infos de l'utilisateur connecté
+    #before_action :authenticate_user, only: [:new, :create]
+    
+    include SessionsHelper
+    
+    
     def index
         @gossips = Gossip.all
         # Méthode qui récupère tous les potins et les envoie à la view index (index.html.erb) pour affichage
@@ -13,16 +16,15 @@ class GossipsController < ApplicationController
     end
     
     def new
-        @create = Gossip.new
+        @gossip = Gossip.new
         # Méthode qui crée un potin vide et l'envoie à une view qui affiche le formulaire pour 'le remplir' (new.html.erb)
     end
     def create
-        #@create = Gossip.new(content: (params[:content]), title: (params[:title]), user: User.all.sample )
-        @gossip = Gossip.create(gossip_params)
+        @gossip = Gossip.new(content: (params[:content]), title: (params[:title]), user: (params[:user_id]) )
         @gossip.user = User.find_by(id: session[:user_id])
         if @gossip.save
           flash[:success] = "Potin bien créé !"
-          redirect_to root_path
+          redirect_to gossips_path
         else
           render :new
           #render "new"
