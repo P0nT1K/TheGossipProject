@@ -15,7 +15,7 @@ Comment.destroy_all
 end
 
 10.times do
-  User.create!(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, description: Faker::Quote.matz, email: Faker::Internet.email, age: rand(15..40), city: City.all.sample)
+  User.create!( password: Faker::Internet.password(max_length: 8), first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, description: Faker::Quote.matz, email: Faker::Internet.email, age: rand(15..40), city: City.all.sample)
 end
 
 20.times do

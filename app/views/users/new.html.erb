@@ -1,0 +1,13 @@
+<h1> Creation de compte <h1>
+<div class="Sign_Form">
+  <h1>Sign Up</h1>
+  <%= form_for @user do |f| %>
+    <p> First name:</br> <%= f.text_field :first_name%> </p>
+    <p> Last name:</br> <%= f.text_field :last_name%> </p>
+    <p> Email:</br> <%= f.text_field :email%> </p>
+     
+    <p> Password:</br> <%= f.text_field :password%></p>
+    
+    <button type="submit" class="btn btn-primary">Créer</button>
+  <% end %>
+</div>

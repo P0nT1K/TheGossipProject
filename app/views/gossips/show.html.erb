@@ -6,13 +6,10 @@
   <hr class="my-4">
   <p>Son auteur : <%= @gossips.user.first_name %></p>
   <p>La ville de l'auteur : <%= @gossips.user.city.name %></p>
+  <p>les commentaires: </p>
   <% @gossips.comments.each do |comment| %>
-  <p>les commentaires: <%= comment.content%></p>
-
+  <p><%= comment.content%></p>
   <%end%>
   <%= link_to "Profil", user_path(@gossips.user.id), :class=>"btn btn-primary btn-lg" %>
 
-
-
- 
 </div>
