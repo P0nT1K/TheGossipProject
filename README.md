@@ -1,7 +1,9 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Pour lancer allez sur local 3000 puis creez un compte apres vous aurez acces au fonctionnalitees avancees mais les comments ne fonctionne pas.
+Par contre une fois le compte cree vous vous connectez et quelques surprises vous attende.....
+au fait pour verifier que les mots de passe sont bien cache inutile d activer votre console vous avez tout une fois connecte
+Bonne visite sur ce blog
 
 Things you may want to cover:
 
