@@ -1,6 +1,4 @@
 <h1>Création d'un Gossip</h1>
-
-
 <%= form_tag(gossips_path, method: "post") do %>
     <%= label_tag( "Prénom") %>
     <%= text_field_tag(:first_name) %>
@@ -12,4 +10,3 @@
     
     <%= submit_tag("Validates") %>
 <% end %>
-

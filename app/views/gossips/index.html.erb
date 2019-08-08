@@ -1,19 +1,25 @@
-<h1>Liste de tous les Gossips</h1>
-<div class="container d-flex flex-wrap">
- <% @gossips.each do |gossip| %>
- <div class="card" style="width: 18rem;">
-  <div class="card-body">
-    <h5 class="card-title"><%= gossip.user.first_name%></h5>
-    <h6 class="card-subtitle mb-2 text-muted"><%= gossip.title%></h6>
-    <p class="card-text"><%= gossip.content%></p>
-    <a href="<%= gossip_path(gossip.id)%>" class="card-link">Consulter</a>
-    <a href="<%= edit_gossip_path(gossip.id)%>" class="card-link">Editer</a>
-    <a href="<%= user_path(gossip.user.id)%>" class="card-link">Auteur</a>
-    <a href="<%= gossip_path(gossip.id)%>" class="btn btn-danger" data-confirm= "êtes vous sûr?" data-method="DELETE" >Supprimer</a>
-  
-  </div>
+
+<div class="jumbotron jumbotron-fluid">
+<div class="container justify-text-center">
+  <h1 class="display-4 text-white">Bienvenue dans The Gossip Project</h1>
+  <p class="lead text-white text-uppercase badge badge-primary text-wrap" style="width: 20rem;">liste de tous les gossips.</p>
 </div>
+</div>
+
+
+<center><div class="list-group justify-content">
+<% @gossips.each do |gossip| %>
+<div class="card w-75">
+  <h5 class=""><%= gossip.user.first_name%></h5>
+  <h6 class="card-subtitle text-muted"><%= gossip.title%></h6>
+  <p class="card-text "><%= gossip.content%></p>
+  <a href="<%= gossip_path(gossip.id)%>" class="card-link btn btn-primary btn-sm">Consulter</a>
+  <a href="<%= edit_gossip_path(gossip.id)%>" class="card-link btn btn-primary btn-sm">Editer</a>
+  <a href="<%= user_path(gossip.user.id)%>" class="card-link btn btn-primary btn-sm">Auteur</a>
+  <a href="<%= gossip_path(gossip.id)%>" class="btn btn-danger btn-sm" data-confirm= "êtes vous sûr?" data-method="DELETE" >Supprimer</a>
+  </div>
+
+</div>
+<br>
 
 <%end%>
-</div>
-

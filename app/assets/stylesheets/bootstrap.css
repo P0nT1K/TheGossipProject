@@ -4,7 +4,7 @@
  * Copyright 2011-2018 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
-:root {
+ :root {
   --blue: #007bff;
   --indigo: #6610f2;
   --purple: #6f42c1;
@@ -42,25 +42,26 @@
 }
 
 html {
-  font-family: sans-serif;
+  font-family: Helvetica;
   line-height: 1.15;
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
-  display: block;
+  display: flex;
 }
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: Helvetica;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
-  color: #ecf2f7;
-  text-align: left;
-  background-color: #000;
+  text-align: center;
+  background-color: transparent;
+  width: 55%;
+  margin-left: 25%;
 }
 
 [tabindex="-1"]:focus {
@@ -82,6 +83,7 @@ h1, h2, h3, h4, h5, h6 {
 p {
   margin-top: 0;
   margin-bottom: 1rem;
+  font-style: italic;
 }
 
 abbr[title],
@@ -153,13 +155,13 @@ sup {
 }
 
 a {
-  color: #007bff;
+  color: white;
   text-decoration: none;
   background-color: transparent;
 }
 
 a:hover {
-  color: #0056b3;
+  color:grey;
   text-decoration: underline;
 }
 
@@ -375,10 +377,12 @@ h4, .h4 {
 
 h5, .h5 {
   font-size: 1.25rem;
+  font-weight: bolder;
 }
 
 h6, .h6 {
   font-size: 1rem;
+  font-weight: lighter;
 }
 
 .lead {
@@ -408,6 +412,7 @@ h6, .h6 {
   font-size: 3.5rem;
   font-weight: 300;
   line-height: 1.2;
+  padding-top: 15%;
 }
 
 hr {
@@ -537,18 +542,11 @@ pre code {
 }
 
 .container {
-  width: 100%;
   padding-right: 15px;
   padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
 }
 
-@media (min-width: 576px) {
-  .container {
-    max-width: 540px;
-  }
-}
+
 
 @media (min-width: 768px) {
   .container {
@@ -603,7 +601,6 @@ pre code {
 .col-lg-auto, .col-xl-1, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl,
 .col-xl-auto {
   position: relative;
-  width: 100%;
   padding-right: 15px;
   padding-left: 15px;
 }
@@ -2372,9 +2369,8 @@ textarea.form-control {
 }
 
 .btn {
-  display: inline-block;
-  font-weight: 400;
-  color: #212529;
+  display: inline-flex;
+  width: 100px;
   text-align: center;
   vertical-align: middle;
   -webkit-user-select: none;
@@ -2423,6 +2419,7 @@ fieldset:disabled a.btn {
   color: #fff;
   background-color: #007bff;
   border-color: #007bff;
+  justify-content: center;
 }
 
 .btn-primary:hover {
@@ -2491,6 +2488,7 @@ fieldset:disabled a.btn {
   color: #fff;
   background-color: #28a745;
   border-color: #28a745;
+  justify-content: center;
 }
 
 .btn-success:hover {
@@ -2972,29 +2970,27 @@ fieldset:disabled a.btn {
   font-size: 1.25rem;
   line-height: 1.5;
   border-radius: 0.3rem;
+  justify-content: center;
 }
 
 .btn-sm, .btn-group-sm > .btn {
-  padding: 0.25rem 0.5rem;
+  padding: 0.5rem 0.5rem;
   font-size: 0.875rem;
   line-height: 1.5;
   border-radius: 0.2rem;
+  justify-content: center;
+  margin-left: 1.25rem;
 }
 
 .btn-block {
   display: block;
-  width: 100%;
 }
 
 .btn-block + .btn-block {
   margin-top: 0.5rem;
 }
 
-input[type="submit"].btn-block,
-input[type="reset"].btn-block,
-input[type="button"].btn-block {
-  width: 100%;
-}
+
 
 .fade {
   transition: opacity 0.15s linear;
@@ -4574,7 +4570,6 @@ input[type="button"].btn-block {
 .card {
   position: relative;
   display: -ms-flexbox;
-  display: flex;
   -ms-flex-direction: column;
   flex-direction: column;
   min-width: 0;
@@ -4583,6 +4578,9 @@ input[type="button"].btn-block {
   background-clip: border-box;
   border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 0.25rem;
+  text-align: center;
+  margin: 5px;
+  margin-left: 10%;
 }
 
 .card > hr {
@@ -4613,6 +4611,7 @@ input[type="button"].btn-block {
 .card-subtitle {
   margin-top: -0.375rem;
   margin-bottom: 0;
+  padding: 3px;
 }
 
 .card-text:last-child {
@@ -5090,6 +5089,7 @@ a.badge-dark:hover, a.badge-dark:focus {
   margin-bottom: 2rem;
   background-color: #e9ecef;
   border-radius: 0.3rem;
+  height: 600px;
 }
 
 @media (min-width: 576px) {
@@ -5099,9 +5099,8 @@ a.badge-dark:hover, a.badge-dark:focus {
 }
 
 .jumbotron-fluid {
-  padding-right: 0;
-  padding-left: 0;
-  border-radius: 0;
+  background: url("https://images.pexels.com/photos/615477/pexels-photo-615477.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940") no-repeat center center; 
+  background-size: cover;
 }
 
 .alert {
@@ -5320,6 +5319,7 @@ a.badge-dark:hover, a.badge-dark:focus {
   -ms-flex-direction: column;
   flex-direction: column;
   padding-left: 0;
+  padding-top: 50px;
   margin-bottom: 0;
 }
 
@@ -7710,11 +7710,13 @@ button.bg-dark:focus {
 }
 
 .w-50 {
-  width: 50% !important;
+  width: 65% !important;
 }
 
 .w-75 {
   width: 75% !important;
+  height: 180px;
+  padding-top:5%;
 }
 
 .w-100 {
