@@ -9,6 +9,7 @@ class UsersController < ApplicationController
     @user = User.new 
   end
   def create
+    puts params
         @user = User.new(user_params)
         @user.city_id = City.all.sample.id
         if @user.save
